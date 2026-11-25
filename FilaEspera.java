@@ -55,11 +55,17 @@ public class FilaEspera {
                     if(this.inicio == null) {
                         this.fim = null;
                     }
-                }else{
-                    if(atual == this.fim) {
-                        this.fim = anterior;
-                    }
-                }
+                }else {
+
+    anterior.setProx(atual.getProx());
+
+    if(atual == this.fim) {
+
+        this.fim = anterior;
+
+    }
+
+}
                 this.tamanho--;
                 return true;
             }
